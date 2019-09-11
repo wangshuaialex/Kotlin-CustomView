@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_customView"
+        android:icon="@mipmap/icon_menu_customview"
+        android:title="@string/menu_customview"></item>
+    <item
+        android:id="@+id/item_cameraView"
+        android:icon="@mipmap/icon_menu_cameraview"
+        android:title="@string/menu_camareview"></item>
+</menu>

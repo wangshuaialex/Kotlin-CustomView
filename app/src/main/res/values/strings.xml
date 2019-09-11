@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">CustomView-Demo</string>
+    <string name="app_name">自定义View-综合案例库</string>
+    <!--  引用文字  -->
+    <string name="menu_customview">自定义View</string>
+    <string name="menu_camareview">CameraView的使用</string>
 </resources>

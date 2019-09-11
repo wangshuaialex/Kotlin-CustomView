@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.HomeActivity">
 
-    <com.alex.customview_demo.ui.widget.DashBoardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="MissingConstraints" />
+     <com.alex.customview_demo.ui.widget.DashBoardView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         tools:ignore="MissingConstraints" />
 
 </LinearLayout>

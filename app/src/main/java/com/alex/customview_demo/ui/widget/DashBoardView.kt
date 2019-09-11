@@ -57,6 +57,7 @@ class DashBoardView(context: Context?, attrs: AttributeSet?) : View(context, att
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
+        var resources = resources
 
         if (canvas != null) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
