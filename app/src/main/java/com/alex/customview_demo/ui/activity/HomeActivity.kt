@@ -22,7 +22,7 @@ class HomeActivity : BaseActivity() {
     override fun generateLayout(): Int {
         return R.layout.activity_home
     }
-
+ 
     override fun switchItem(menuItem: MenuItem): Fragment {
         lateinit var mFragment: Fragment
         when (menuItem.itemId) {

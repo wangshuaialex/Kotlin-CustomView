@@ -6,6 +6,7 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
+import android.widget.ImageView
 import com.alex.customview_demo.data.utils.BitmapConvertUtils
 import com.alex.customview_demo.data.utils.DimensionUtils
 
@@ -16,8 +17,9 @@ import com.alex.customview_demo.data.utils.DimensionUtils
  */
 class CameraConvertView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
 
-    lateinit var mPaint: Paint
-    lateinit var mCamera: Camera
+    var mPaint: Paint
+    var mCamera: Camera
+    val IMAGEWIDTH: Float = 400F
 
     init {
         mPaint = Paint()
@@ -28,13 +30,42 @@ class CameraConvertView(context: Context?, attrs: AttributeSet?) : View(context,
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
-        mCamera.applyToCanvas(canvas)
-        var avatarBitmap =
-            BitmapConvertUtils.getAvatarBitmap(resources, DimensionUtils.dp2px(20f).toInt())
+        //上半部分
         if (canvas != null) {
+            canvas.save()
+            //第一种方式：画布平移，平移完毕后针对图像进行重新切图
+            //canvas.translate(IMAGEWIDTH / 2, IMAGEWIDTH / 2)
+            //canvas.clipRect(-IMAGEWIDTH / 2, -IMAGEWIDTH / 2, IMAGEWIDTH / 2, 0F)
+            // canvas.translate(-IMAGEWIDTH / 2, -IMAGEWIDTH / 2)
+            //第二种方式：画布不平移,直接切图像
+            canvas.clipRect(0f, 0f, IMAGEWIDTH, IMAGEWIDTH / 2)
+            //图片绘制
+            var avatarBitmap = BitmapConvertUtils.getAvatarBitmap(
+                resources,
+                DimensionUtils.dp2px(IMAGEWIDTH).toInt()
+            )
             canvas.drawBitmap(avatarBitmap, 0f, 0f, mPaint)
+            canvas.restore()
         }
 
+
+        //下半部分
+        if (canvas != null) {
+            canvas.save()
+            //画布右下平移，位置重新变换，坐标系位置改动
+            canvas.translate(IMAGEWIDTH / 2, IMAGEWIDTH / 2)
+            mCamera.applyToCanvas(canvas)
+            canvas.clipRect(-IMAGEWIDTH / 2, 0F, IMAGEWIDTH / 2, IMAGEWIDTH / 2)
+            canvas.translate(-IMAGEWIDTH / 2, -IMAGEWIDTH / 2)
+            //图片绘制
+            var avatarBitmap =
+                BitmapConvertUtils.getAvatarBitmap(
+                    resources,
+                    DimensionUtils.dp2px(IMAGEWIDTH).toInt()
+                )
+            canvas.drawBitmap(avatarBitmap, 0f, 0f, mPaint)
+            canvas.restore()
+        }
     }
 
 }
