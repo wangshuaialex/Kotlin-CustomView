@@ -5,7 +5,7 @@
         android:icon="@mipmap/icon_menu_customview"
         android:title="@string/menu_customview"></item>
     <item
-        android:id="@+id/item_cameraView"
+        android:id="@+id/item_cartonView"
         android:icon="@mipmap/icon_menu_cameraview"
         android:title="@string/menu_camareview"></item>
 </menu>

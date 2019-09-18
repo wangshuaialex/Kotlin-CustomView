@@ -4,6 +4,7 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import com.alex.customview_demo.R
 import com.alex.customview_demo.ui.fragment.CameraFragment
+import com.alex.customview_demo.ui.fragment.CartonFragment
 import com.alex.customview_demo.ui.fragment.CustomFragment
 
 
@@ -22,12 +23,12 @@ class HomeActivity : BaseActivity() {
     override fun generateLayout(): Int {
         return R.layout.activity_home
     }
- 
+
     override fun switchItem(menuItem: MenuItem): Fragment {
         lateinit var mFragment: Fragment
         when (menuItem.itemId) {
             R.id.item_customView -> mFragment = CustomFragment()
-            R.id.item_cameraView -> mFragment = CameraFragment()
+            R.id.item_cartonView -> mFragment = CartonFragment()
         }
         return mFragment
     }

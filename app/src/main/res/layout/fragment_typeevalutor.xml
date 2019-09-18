@@ -8,8 +8,8 @@
     android:orientation="vertical"
     tools:context=".ui.activity.HomeActivity">
 
-    <com.alex.customview_demo.ui.widget.CameraConvertView
-        android:id="@+id/ccv_convertView"
+    <com.alex.customview_demo.ui.widget.TypeEvalutorView
+        android:id="@+id/tev_evalutorView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>
