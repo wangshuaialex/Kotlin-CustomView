@@ -246,8 +246,11 @@ class DashBoardView(context: Context?, attrs: AttributeSet?) : View(context, att
 ![图2-1 折页效果](https://upload-images.jianshu.io/upload_images/3520331-fef0b6cb249736ad.gif?imageMogr2/auto-orient/strip)
 
 ##1、思路分析
+
 ###①图片拆分为上部，只做图片切割
+
 ![图2-1-1 图片上下两部分的拆分](https://upload-images.jianshu.io/upload_images/3520331-bc43b238d64caee1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 1.使用**canvas.clipRec()**系列方法对原始图片做切割，对上下两个部分分别做切割；
 2.对于上半部分的图片，不做任何转换，以下为实现部分；
 ~~~
