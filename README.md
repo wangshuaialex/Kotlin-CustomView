@@ -243,7 +243,7 @@ class DashBoardView(context: Context?, attrs: AttributeSet?) : View(context, att
 ***
 #二、折页效果
 
-![图2-1 折页效果](https://upload-images.jianshu.io/upload_images/3520331-fef0b6cb249736ad.gif?imageMogr2/auto-orient/strip)
+![图2-1 折页效果](https://github.com/wangshuaialex/Kotlin-CustomView/blob/master/app/src/main/assets/effects.gif)
 
 ##1、思路分析
 
