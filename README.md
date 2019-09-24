@@ -1,4 +1,5 @@
 #前言
+
 ![](https://upload-images.jianshu.io/upload_images/3520331-405f33e928ef4a4f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 本文的目的有两个：
@@ -91,8 +92,10 @@
         )
     }
 ~~~
+
 4. 最后在onDraw()中对刻度条进行绘制；
 刻度尺也是需要借助于当前绘制的圆弧。核心点在于**mPaint.setPathEffect(mPathDashPathEffect)**：
+
 ~~~
                 //设置刻度条
                 mPaint.setPathEffect(mPathDashPathEffect)
@@ -108,10 +111,14 @@
                 canvas.drawPath(mPath, mPaint)
                 mPaint.setPathEffect(null)
 ~~~
+
 * 在这里，需要对**PathEffect**做详细介绍解释（Android Api节选）：
 *PathEffect is the base class for objects in the Paint that affectthe geometry of a drawing primitive before it is transformed by thecanvas' matrix and drawn.*
 译：PathEffect是Paint中的对象的基类，这些对象在**被canvas的矩阵变换和绘制之前影响了原始的绘制对象**。
-* PathEffect有多个子类，在这里不做赘述，我所使用的是PathDashPathEffect，详情查看—>[官网文档传送门](https://developer.android.google.cn/reference/android/graphics/PathDashPathEffect.html)
+
+* PathEffect有多个子类，在这里不做赘述，我所使用的是PathDashPathEffect，详情查看—>[官网文档传送门]
+(https://developer.android.google.cn/reference/android/graphics/PathDashPathEffect.html)
+
 ![图1-2-1 PathDashPathEffect的官网说明](https://upload-images.jianshu.io/upload_images/3520331-905d832fdfc74593.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
