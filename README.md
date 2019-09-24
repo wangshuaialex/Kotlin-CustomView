@@ -1,4 +1,4 @@
-#前言
+因简书平台问题，本文内容案例之后会传到简书上进行更新
 
 ![](https://upload-images.jianshu.io/upload_images/3520331-405f33e928ef4a4f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
