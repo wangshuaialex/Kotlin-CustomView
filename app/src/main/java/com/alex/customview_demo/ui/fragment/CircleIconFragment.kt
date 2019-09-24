@@ -12,13 +12,15 @@ import com.alex.customview_demo.R
  * @date 2019/9/6.
  * GitHub：https://github.com/wangshuaialex
  */
-class CircleIconFragment : Fragment() {
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return LayoutInflater.from(context).inflate(R.layout.fragment_circleicon, container, false)
+class CircleIconFragment : BaseFragment() {
+    override fun loadData() {
     }
+
+    override fun getLayoutId(): Int {
+        return R.layout.fragment_circleicon
+    }
+
+    override fun initData() {
+    }
+
 }

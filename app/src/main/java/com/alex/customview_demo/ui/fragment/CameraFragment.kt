@@ -19,38 +19,26 @@ import kotlinx.android.synthetic.main.fragment_camera.*
  * @date 2019/9/6.
  * GitHub：https://github.com/wangshuaialex
  */
-class CameraFragment : Fragment() {
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        var rootView =
-            LayoutInflater.from(context).inflate(R.layout.fragment_camera, container, false)
-        var ccv_convertView: CameraConvertView =
-            rootView.findViewById<CameraConvertView>(R.id.ccv_convertView)
-        //设置自定义的宽度变化属性动画
-        /*var animator =
-            ObjectAnimator.ofFloat(ccv_convertView, "mImageWidth", DimensionUtils.dp2px(400F))
-        animator.duration = 1000
-        animator.startDelay = 300
-        animator.start()*/
-
+class CameraFragment : BaseFragment() {
+    override fun loadData() {
         //顶部折页动画
         var topAngleAnimator = ObjectAnimator.ofFloat(ccv_convertView, "mTopAngle", -60f)
-        //底部折页动画
-        var bottomAngleAnimator = ObjectAnimator.ofFloat(ccv_convertView, "mBottomAngle", 60f)
         //画布折页动画
         var canvasAngleAnimator = ObjectAnimator.ofFloat(ccv_convertView, "mCanvasAngle", 270f)
+        //底部折页动画
+        var bottomAngleAnimator = ObjectAnimator.ofFloat(ccv_convertView, "mBottomAngle", 120f)
         var animatorSet = AnimatorSet()
         animatorSet.startDelay = 1000
         animatorSet.duration = 800
         animatorSet
-            .playSequentially(bottomAngleAnimator, topAngleAnimator)
+            .playSequentially(bottomAngleAnimator)
         animatorSet.start()
-        return rootView
     }
 
+    override fun getLayoutId(): Int {
+        return R.layout.fragment_camera
+    }
 
+    override fun initData() {
+    }
 }

@@ -30,7 +30,7 @@ class CartonFragment : Fragment() {
         var fragmentList = getFragmentList()
         var titleList = getTitleList()
         //设置适配器
-        vp_cartonContainer.offscreenPageLimit = 1
+        //vp_cartonContainer.offscreenPageLimit = 1
         vp_cartonContainer.adapter = SubHomeAdapter(childFragmentManager, fragmentList, titleList)
         tab_cartonContainer.setupWithViewPager(vp_cartonContainer)
         return rootView

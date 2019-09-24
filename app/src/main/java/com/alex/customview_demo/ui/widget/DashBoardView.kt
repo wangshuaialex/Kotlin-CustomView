@@ -23,7 +23,7 @@ class DashBoardView(context: Context?, attrs: AttributeSet?) : View(context, att
     val mArcAngle = 120
     //刻度条所依赖的线
     var mPath = Path()
-    //刻度条
+    //路径改变器
     lateinit var mPathDashPathEffect: PathDashPathEffect
     //刻度线数量
     val mDashCount: Int = 20
@@ -40,8 +40,6 @@ class DashBoardView(context: Context?, attrs: AttributeSet?) : View(context, att
             DimensionUtils.dp2px(8f),
             Path.Direction.CCW
         )
-
-
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
@@ -52,7 +50,6 @@ class DashBoardView(context: Context?, attrs: AttributeSet?) : View(context, att
             0F,
             PathDashPathEffect.Style.ROTATE
         )
-
     }
 
     override fun onDraw(canvas: Canvas?) {
@@ -61,7 +58,7 @@ class DashBoardView(context: Context?, attrs: AttributeSet?) : View(context, att
 
         if (canvas != null) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                //先画原始的圆
+                //先onDraw()绘制内容中，画外层的圆弧
                 mPath.addArc(
                     width / 2 - mRadius,
                     height / 2 - mRadius,
@@ -72,6 +69,7 @@ class DashBoardView(context: Context?, attrs: AttributeSet?) : View(context, att
                 )
 
                 canvas.drawPath(mPath, mPaint)
+
                 //设置刻度条
                 mPaint.setPathEffect(mPathDashPathEffect)
                 //然后再画刻度条

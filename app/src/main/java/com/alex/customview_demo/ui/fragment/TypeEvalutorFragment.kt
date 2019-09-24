@@ -16,22 +16,21 @@ import kotlinx.android.synthetic.main.fragment_typeevalutor.*
  * @date 2019/9/18.
  * GitHub：https://github.com/wangshuaialex
  */
-class TypeEvalutorFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        var rootView =
-            LayoutInflater.from(context).inflate(R.layout.fragment_typeevalutor, container, false)
-        var typeEvalutorView: TypeEvalutorView =
-            rootView.findViewById<TypeEvalutorView>(R.id.tev_evalutorView)
+class TypeEvalutorFragment : BaseFragment() {
+    override fun loadData() {
         //参数4：结束值
         var animator =
-            ObjectAnimator.ofObject(typeEvalutorView, "province", ProvinceEvalutor(), "G")
+            ObjectAnimator.ofObject(tev_evalutorView, "province", ProvinceEvalutor(), "G")
         animator.startDelay = 1000
         animator.duration = 3000
         animator.start()
-        return rootView
     }
+
+    override fun getLayoutId(): Int {
+        return R.layout.fragment_typeevalutor
+    }
+
+    override fun initData() {
+    }
+
 }
