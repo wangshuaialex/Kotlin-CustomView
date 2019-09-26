@@ -43,6 +43,7 @@ class CartonFragment : Fragment() {
         var titleList = ArrayList<String>()
         titleList.add("折页效果")
         titleList.add("插值器实现动画")
+        titleList.add("Drawable源码设置使用")
         return titleList
     }
 
@@ -53,8 +54,10 @@ class CartonFragment : Fragment() {
         var fragmentList = ArrayList<Fragment>()
         var cameraFragment = CameraFragment()
         var typeEvalutorFragment = TypeEvalutorFragment()
+        var drawableFragment = DrawableFragment()
         fragmentList.add(cameraFragment)
         fragmentList.add(typeEvalutorFragment)
+        fragmentList.add(drawableFragment)
         return fragmentList
     }
 }
