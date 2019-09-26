@@ -1,4 +1,6 @@
 #自定义View-Kotlin版
+可跳转简书博客查看内容，地址：https://www.jianshu.com/p/c5ffe9dba5a2
+
 
 ![](https://upload-images.jianshu.io/upload_images/3520331-405f33e928ef4a4f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
